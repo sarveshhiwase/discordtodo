@@ -1,0 +1,7 @@
+1. Get components that you want to use.
+
+2. Create proper directory structure.
+
+3.Created input modal
+
+4.Create todos with cards.

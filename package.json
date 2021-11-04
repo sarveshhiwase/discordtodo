@@ -1,17 +1,18 @@
 {
-  "homepage": "https://sarveshhiwase.github.io/animewatcher",
+  "homepage": "https://sarveshhiwase.github.io/githubtodo",
   "name": "reactbasic",
   "version": "0.1.0",
   "dependencies": {
     "@craco/craco": "^6.4.0",
+    "moment": "^2.29.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3"
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",  
-    "start": "pretter -w . && TAILWIND_MODE=watch craco start",
+    "deploy": "gh-pages -d build",
+    "start": "prettier -w . && TAILWIND_MODE=watch craco start",
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject"

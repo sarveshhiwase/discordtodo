@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.btn {
+  @apply text-white font-bold py-2 px-4;
+}
+
+.text-git {
+  @apply text-[#96A2AF];
+}
