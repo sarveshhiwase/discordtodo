@@ -17,16 +17,16 @@ function App() {
 
   const getLocalStorageData = () => {
     const data = localStorage.getItem("tasks");
-    if(data){
+    if (data) {
       const tasks = JSON.parse(data);
       return tasks;
     }
     return null;
-  }
+  };
 
   const getJSONformatdata = (data) => {
     return JSON.stringify(data);
-  }
+  };
 
   useEffect(() => {
     const tasks = getLocalStorageData();
@@ -35,10 +35,11 @@ function App() {
     }
   }, []);
 
-  const createTask = (title, description) => {
+  const createTask = (title, description, state) => {
     const task = {
       title,
       description,
+      state,
       created: Date.now(),
     };
     if (usertasks) {
@@ -52,26 +53,24 @@ function App() {
     }
   };
 
-
   const deleteTask = (id) => {
     let index = -1;
     for (let i = 0; i < usertasks.length; i++) {
-        if(usertasks[i].created === id){
-          index = i;
-          break;
-        }
+      if (usertasks[i].created === id) {
+        index = i;
+        break;
+      }
     }
     if (index > -1) {
       const tasks = [...usertasks];
-      tasks.splice(index, 1)
-      localStorage.setItem("tasks",  getJSONformatdata(tasks));
+      tasks.splice(index, 1);
+      localStorage.setItem("tasks", getJSONformatdata(tasks));
       setUsertasks(tasks);
     }
-
-  }
+  };
 
   return (
-    <div className="min-h-screen bg-[#1C2128]">
+    <div className="min-h-screen bg-[#22272E]">
       <Navbar />
       <div className="flex flex-col justify-center items-center">
         <button
@@ -93,6 +92,7 @@ function App() {
               key={task.created}
               created={task.created}
               deleteTask={deleteTask}
+              state={task.state}
             />
           ))}
       </div>

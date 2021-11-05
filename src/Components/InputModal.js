@@ -3,13 +3,15 @@ import { useState } from "react";
 function InputModal({ closeModal, createTask }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [taskstate, setTaskState] = useState("uncompleted");
+
 
   const AddTask = () => {
-    if (title !== "" && description !== "") {
-      createTask(title, description);
+    if (title !== "" && description !== "" && taskstate !== "") {
+      createTask(title, description,taskstate);
       closeModal();
     } else {
-      alert("Enter Title and Description");
+      alert("Enter Title and Description and task state");
     }
   };
 
@@ -49,6 +51,18 @@ function InputModal({ closeModal, createTask }) {
               placeholder="Enter Todo Description"
               className="w-full mt-2 bg-[#1C2128] p-3 border border-gray-500 text-white rounded-md focus:border-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
+          </div>
+          <div className="w-full">
+            <label htmlFor="taskstate" className="text-git font-bold">
+              Task State
+            </label>
+            <select className="w-full mt-2 bg-[#1C2128] p-2 border border-gray-500 text-white rounded-md focus:border-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-600"
+ name="taskstate" onChange={(e) => setTaskState(e.target.value)}>
+            <option value="uncompleted">Uncompleted</option>
+            <option value="inprogress">In Progress</option>
+            <option value="pending" >Pending</option>
+            <option value="completed">Completed</option>
+</select>
           </div>
         </div>
         <div className="flex justify-center items-center">
