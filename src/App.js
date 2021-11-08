@@ -1,18 +1,28 @@
 import { useState, useEffect } from "react";
 import Navbar from "./Components/Navbar";
 import InputModal from "./Components/InputModal";
+import Modal from "./Components/Modal";
 import Task from "./Components/Task";
 
 function App() {
   const [addTask, setAddTask] = useState(false);
+  const [show,setShow] = useState(false);
   const [usertasks, setUsertasks] = useState([]);
 
-  const showModal = () => {
+  const showInputModal = () => {
     setAddTask(true);
   };
 
-  const closeModal = () => {
+  const showModal = () => {
+    setShow(true);
+  }
+
+  const closeInputModal = () => {
     setAddTask(false);
+  };
+
+  const closeModal = () => {
+    setShow(false);
   };
 
   const getLocalStorageData = () => {
@@ -70,20 +80,16 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#22272E]">
-      <Navbar />
-      <div className="flex flex-col justify-center items-center">
-        <button
-          className="btn my-4 bg-blue-600 hover:bg-blue-700 rounded-lg"
-          onClick={showModal}
-        >
-          +
-        </button>
-      </div>
+   <>
+    <Navbar showInputModal={showInputModal} showModal={showModal}/>
+    <div className="h-screen dark:bg-gray-700 bg-white">
       {addTask && (
-        <InputModal closeModal={closeModal} createTask={createTask} />
+        <InputModal closeModal={closeInputModal} createTask={createTask} />
       )}
-      <div className="w-3/5 m-auto">
+      {show && (
+        <Modal closeModal={closeModal} />
+      )}
+      <div className="w-3/5 p-4 mx-auto">
         {usertasks &&
           usertasks.map((task) => (
             <Task
@@ -97,6 +103,7 @@ function App() {
           ))}
       </div>
     </div>
+  </>
   );
 }
 
