@@ -10,7 +10,10 @@ function Task({ title, description, created, deleteTask, state }) {
         <div className="flex items-center justify-center py-2">
           {/*<div className={"w-4 h-4 rounded-full mr-1 shadow-lg " + bgcolor(state)}></div>*/}
           <h2
-            className={"rounded-md font-bold dark:text-white px-2 py-1 shadow-lg " + bgcolor(state)}
+            className={
+              "rounded-md font-bold dark:text-white px-2 py-1 shadow-lg " +
+              bgcolor(state)
+            }
           >
             {emoji(state) + " " + state}
           </h2>

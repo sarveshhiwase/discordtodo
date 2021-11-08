@@ -22,14 +22,23 @@ function InputModal({ closeModal, createTask }) {
       />
       <div className="absolute inset-x-0 top-36 m-auto w-[400px] bg-white dark:bg-[#22272E] border border-gray-500 rounded-md dark:text-git text-gitdark">
         <div className="flex items-center justify-end dark:bg-[#2D333B] bg-[#F6F8FA] p-2">
-        <header className=" text-center w-full">
-          <h1 className="text-lg font-bold">Add Your Todo</h1>
-        </header>
-           <div onClick={closeModal}>
-         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 cursor-pointer" viewBox="0 0 20 20" fill="currentColor">
-  <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
-</svg>
-       </div>
+          <header className=" text-center w-full">
+            <h1 className="text-lg font-bold">Add Your Todo</h1>
+          </header>
+          <div onClick={closeModal}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6 cursor-pointer"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </div>
         </div>
         <div className="border-b border-t border-gray-500 p-4 flex flex-col items-center justify-center">
           <div className="w-full">
@@ -75,7 +84,7 @@ function InputModal({ closeModal, createTask }) {
           </div>
         </div>
         <div className="flex justify-end items-center">
-        <button
+          <button
             className="btn my-4 mr-2 rounded-md bg-red-500 hover:bg-red-600"
             onClick={closeModal}
           >
@@ -87,7 +96,6 @@ function InputModal({ closeModal, createTask }) {
           >
             Add Task
           </button>
-          
         </div>
       </div>
     </div>

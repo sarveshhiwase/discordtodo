@@ -6,7 +6,7 @@ import Task from "./Components/Task";
 
 function App() {
   const [addTask, setAddTask] = useState(false);
-  const [show,setShow] = useState(false);
+  const [show, setShow] = useState(false);
   const [usertasks, setUsertasks] = useState([]);
 
   const showInputModal = () => {
@@ -15,7 +15,7 @@ function App() {
 
   const showModal = () => {
     setShow(true);
-  }
+  };
 
   const closeInputModal = () => {
     setAddTask(false);
@@ -80,30 +80,28 @@ function App() {
   };
 
   return (
-   <>
-    <Navbar showInputModal={showInputModal} showModal={showModal}/>
-    <div className="h-screen dark:bg-gray-700 bg-white">
-      {addTask && (
-        <InputModal closeModal={closeInputModal} createTask={createTask} />
-      )}
-      {show && (
-        <Modal closeModal={closeModal} />
-      )}
-      <div className="w-3/5 p-4 mx-auto">
-        {usertasks &&
-          usertasks.map((task) => (
-            <Task
-              title={task.title}
-              description={task.description}
-              key={task.created}
-              created={task.created}
-              deleteTask={deleteTask}
-              state={task.state}
-            />
-          ))}
+    <>
+      <Navbar showInputModal={showInputModal} showModal={showModal} />
+      <div className="h-screen dark:bg-gray-700 bg-white">
+        {addTask && (
+          <InputModal closeModal={closeInputModal} createTask={createTask} />
+        )}
+        {show && <Modal closeModal={closeModal} />}
+        <div className="w-3/5 p-4 mx-auto">
+          {usertasks &&
+            usertasks.map((task) => (
+              <Task
+                title={task.title}
+                description={task.description}
+                key={task.created}
+                created={task.created}
+                deleteTask={deleteTask}
+                state={task.state}
+              />
+            ))}
+        </div>
       </div>
-    </div>
-  </>
+    </>
   );
 }
 
