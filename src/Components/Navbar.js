@@ -19,7 +19,7 @@ function Navbar({ showInputModal, showModal }) {
             />
           </svg>
         }
-        text="GitHub Todo⚡"
+        text="Discord Todo⚡"
       />
 
       <hr className="sidebar-hr" />
