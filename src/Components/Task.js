@@ -3,7 +3,7 @@ import { bgcolor, emoji } from "../Utils/helpers";
 
 function Task({ title, description, created, deleteTask, state }) {
   return (
-    <div className="border border-[#d0d7de] dark:border-gray-500 bg-[#FFFFFF] dark:bg-[#2F3136] mt-2 rounded-lg text-gitdark dark:text-git p-4 flex justify-between shadow-lg">
+    <div className="border border-[#d0d7de] dark:border-gray-500 bg-[#f5f5f5] dark:bg-[#2F3136] mt-2 rounded-lg text-gitdark dark:text-git p-4 flex justify-between shadow-lg">
       <div className="flex flex-col justify-center items-start">
         <h3 className="text-xl font-bold">{title}</h3>
         <p>{description}</p>

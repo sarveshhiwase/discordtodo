@@ -8,6 +8,7 @@ function App() {
   const [addTask, setAddTask] = useState(false);
   const [show, setShow] = useState(false);
   const [usertasks, setUsertasks] = useState([]);
+  const [color, setColor] = useState("");
 
   const showInputModal = () => {
     setAddTask(true);
@@ -25,8 +26,13 @@ function App() {
     setShow(false);
   };
 
-  const getLocalStorageData = () => {
-    const data = localStorage.getItem("tasks");
+  const storeUserColor = (value) => {
+    localStorage.setItem("user-color", value);
+    setColor(value);
+  }
+
+  const getLocalStorageData = (key) => {
+    const data = localStorage.getItem(key);
     if (data) {
       const tasks = JSON.parse(data);
       return tasks;
@@ -39,9 +45,14 @@ function App() {
   };
 
   useEffect(() => {
-    const tasks = getLocalStorageData();
+    const tasks = getLocalStorageData('tasks');
+    const usercolor = localStorage.getItem('user-color');
+
     if (tasks !== null) {
       setUsertasks(tasks);
+    }
+    if (usercolor !== null) {
+      setColor(usercolor);
     }
   }, []);
 
@@ -81,12 +92,16 @@ function App() {
 
   return (
     <>
-      <Navbar showInputModal={showInputModal} showModal={showModal} />
-      <div className="h-screen dark:bg-gray-700 bg-white">
+      <Navbar
+        showInputModal={showInputModal}
+        showModal={showModal}
+        color={color}
+      />
+      <div className="h-screen dark:bg-gray-700 bg-[#f0f8ff]">
         {addTask && (
           <InputModal closeModal={closeInputModal} createTask={createTask} />
         )}
-        {show && <Modal closeModal={closeModal} />}
+        {show && <Modal closeModal={closeModal} setColor={storeUserColor} color={color} />}
         <div className="w-3/5 p-4 mx-auto">
           {usertasks &&
             usertasks.map((task) => (

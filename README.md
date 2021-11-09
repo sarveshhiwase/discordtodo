@@ -25,4 +25,3 @@ Builds the app for production to the `build` folder.
 - React
 - HeroIcons
 - Discord UI(Inspiration)
-

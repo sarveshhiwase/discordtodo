@@ -7,24 +7,7 @@ module.exports = {
   darkMode: "class", // class, 'media' or boolean
   theme: {
     extend: {
-      fontFamily: {
-        sans: [
-          '"Inter"',
-          "system-ui",
-          "-apple-system",
-          "BlinkMacSystemFont",
-          '"Segoe UI"',
-          "Roboto",
-          '"Helvetica Neue"',
-          "Arial",
-          '"Noto Sans"',
-          "sans-serif",
-          '"Apple Color Emoji"',
-          '"Segoe UI Emoji"',
-          '"Segoe UI Symbol"',
-          '"Noto Color Emoji"',
-        ],
-      },
+      textColor: ["responsive", "hover", "focus", "group-hover"],
       colors: {
         gray: {
           900: "#202225",

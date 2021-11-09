@@ -20,7 +20,7 @@ function InputModal({ closeModal, createTask }) {
         className="absolute inset-0 backdrop-filter backdrop-blur-sm"
         onClick={closeModal}
       />
-      <div className="absolute inset-x-0 top-36 m-auto w-[400px] bg-white dark:bg-[#22272E] border border-gray-500 rounded-md dark:text-git text-gitdark">
+      <div className="absolute inset-x-0 top-36 m-auto w-[400px] bg-[#f0f8ff] dark:bg-[#22272E] border border-gray-500 rounded-md dark:text-git text-gitdark">
         <div className="flex items-center justify-end dark:bg-[#2D333B] bg-[#F6F8FA] p-2">
           <header className=" text-center w-full">
             <h1 className="text-lg font-bold">Add Your Todo</h1>
@@ -50,7 +50,7 @@ function InputModal({ closeModal, createTask }) {
               type="text"
               name="title"
               placeholder="Enter Todo Title"
-              className="w-full mt-2  dark:bg-[#1C2128] bg-[#F6F8FA] p-3 border border-gray-500 rounded-md focus:border-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-600"
+              className="w-full mt-2  dark:bg-[#1C2128] bg-[#f0ffff] p-3 border border-gray-500 rounded-md focus:border-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
           </div>
           <div className="w-full m-4">
@@ -64,7 +64,7 @@ function InputModal({ closeModal, createTask }) {
               rows="5"
               type="text"
               placeholder="Enter Todo Description"
-              className="w-full mt-2  dark:bg-[#1C2128] bg-[#F6F8FA] p-3 border border-gray-500 rounded-md focus:border-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-600"
+              className="w-full mt-2  dark:bg-[#1C2128] bg-[#f0ffff] p-3 border border-gray-500 rounded-md focus:border-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
           </div>
           <div className="w-full">
@@ -72,7 +72,7 @@ function InputModal({ closeModal, createTask }) {
               Task State
             </label>
             <select
-              className="w-full mt-2  dark:bg-[#1C2128] bg-[#F6F8FA] p-2 border border-gray-500 rounded-md focus:border-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-600"
+              className="w-full mt-2  dark:bg-[#1C2128] bg-[#f0ffff] p-2 border border-gray-500 rounded-md focus:border-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-600"
               name="taskstate"
               onChange={(e) => setTaskState(e.target.value)}
             >
