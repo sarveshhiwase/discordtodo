@@ -29,7 +29,7 @@ function App() {
   const storeUserColor = (value) => {
     localStorage.setItem("user-color", value);
     setColor(value);
-  }
+  };
 
   const getLocalStorageData = (key) => {
     const data = localStorage.getItem(key);
@@ -45,14 +45,16 @@ function App() {
   };
 
   useEffect(() => {
-    const tasks = getLocalStorageData('tasks');
-    const usercolor = localStorage.getItem('user-color');
+    const tasks = getLocalStorageData("tasks");
+    const usercolor = localStorage.getItem("user-color");
 
     if (tasks !== null) {
       setUsertasks(tasks);
     }
-    if (usercolor !== null) {
+    if (usercolor) {
       setColor(usercolor);
+    } else {
+      setColor("blue");
     }
   }, []);
 
@@ -101,7 +103,13 @@ function App() {
         {addTask && (
           <InputModal closeModal={closeInputModal} createTask={createTask} />
         )}
-        {show && <Modal closeModal={closeModal} setColor={storeUserColor} color={color} />}
+        {show && (
+          <Modal
+            closeModal={closeModal}
+            setColor={storeUserColor}
+            color={color}
+          />
+        )}
         <div className="w-3/5 p-4 mx-auto">
           {usertasks &&
             usertasks.map((task) => (

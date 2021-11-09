@@ -6,12 +6,10 @@ function Modal({ closeModal, setColor, color }) {
         onClick={closeModal}
       ></div>
       <div className="absolute border border-[#d0d7de] dark:border-gray-500 inset-x-0 top-36 m-auto p-2 w-2/5 bg-[#f5f5f5] dark:bg-[#1C2128] rounded-md text-gitdark dark:text-white">
-        
-          <h1 className="p-2  text-2xl font-bold text-center">
-            Customize Your view
-          </h1>
+        <h1 className="p-2  text-2xl font-bold text-center">
+          Customize Your view
+        </h1>
         <div className="m-2 p-4 flex items-center justify-center">
-
           <button
             className="btn bg-red-500 hover:opacity-80 h-12 w-12 rounded-full mx-1 shadow-lg"
             onClick={() => setColor("red")}
