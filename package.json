@@ -1,5 +1,5 @@
 {
-  "homepage": "https://sarveshhiwase.github.io/githubtodo",
+  "homepage": "https://sarveshhiwase.github.io/discordtodo",
   "name": "reactbasic",
   "version": "0.1.0",
   "dependencies": {
@@ -8,9 +8,11 @@
     "moment": "^2.29.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3"
+    "react-scripts": "4.0.3",
+    "source-map-explorer": "^2.5.2"
   },
   "scripts": {
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "prettier -w . && TAILWIND_MODE=watch craco start",
