@@ -99,7 +99,7 @@ function App() {
         showModal={showModal}
         color={color}
       />
-      <div className="h-screen dark:bg-gray-700 bg-[#f0f8ff]">
+      <div className="min-h-screen dark:bg-gray-700 bg-[#f0f8ff]">
         {addTask && (
           <InputModal closeModal={closeInputModal} createTask={createTask} />
         )}
