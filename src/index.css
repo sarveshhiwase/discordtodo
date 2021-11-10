@@ -76,7 +76,7 @@
 .sidebar-hr {
   @apply bg-gray-700 dark:bg-gray-800 
     border border-gray-200 dark:border-gray-800 rounded-full
-    mx-2 w-3/5 shadow-lg;
+    mx-2 w-3/5 shadow-lg hidden sm:block;
 }
 @layer components {
   .text-git {

@@ -8,14 +8,12 @@ function Navbar({ showInputModal, showModal, color }) {
   return (
     <nav className="fixed top-0 left-0 p-1 sm:p-0 h-auto sm:h-screen w-full sm:w-16 flex flex-row sm:flex-col bg-white dark:bg-gray-900 justify-start items-center shadow-2xl">
       <SidebarIcon
-        icon={
-          <GiBurningSkull size="32"/>
-        }
+        icon={<GiBurningSkull size="32" className="animate-spin" />}
         text="Discord Todo⚡"
         color={color}
       />
 
-      {/*<hr className="sidebar-hr" />*/}
+      <hr className="sidebar-hr" />
       <SidebarIcon
         icon={
           <svg
@@ -84,7 +82,7 @@ function Navbar({ showInputModal, showModal, color }) {
         text="Customize your view"
         color={color}
       />
-      {/*<hr className="sidebar-hr" />*/}
+      <hr className="sidebar-hr hidden sm:visible" />
     </nav>
   );
 }
