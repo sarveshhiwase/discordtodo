@@ -67,7 +67,7 @@
   @apply bg-blue-500 hover:bg-blue-700;
 }
 .sidebar-tooltip {
-  @apply absolute w-auto p-2 m-2 min-w-max left-14 rounded-md shadow-md
+  @apply absolute w-auto p-2 m-2 min-w-max left--4 top-14 sm:left-14 sm:top-0 rounded-md shadow-md
     text-black bg-white dark:bg-gray-800 dark:text-white
     text-xs font-bold 
     transition-all duration-100 scale-0 origin-left;

@@ -1,4 +1,4 @@
-function SideBarIcon({ icon, text = "tooltip", click, color }) {
+function SideBarIcon({ icon, text = "tooltip", click, color, animate }) {
   return (
     <div className={`sidebar-${color} group`} onClick={click}>
       {icon}

@@ -1,31 +1,21 @@
 import SidebarIcon from "./SidebarIcon";
 import UseDarkMode from "../hooks/Usedarkmode";
+import { GiBurningSkull } from "react-icons/gi";
 
 function Navbar({ showInputModal, showModal, color }) {
   const [darkMode, setDarkMode] = UseDarkMode();
 
   return (
-    <nav className="fixed top-0 left-0 h-screen w-16 flex flex-col bg-white dark:bg-gray-900 justify-start items-center shadow-2xl">
+    <nav className="fixed top-0 left-0 p-1 sm:p-0 h-auto sm:h-screen w-full sm:w-16 flex flex-row sm:flex-col bg-white dark:bg-gray-900 justify-start items-center shadow-2xl">
       <SidebarIcon
         icon={
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            className={`h-8 w-8`}
-          >
-            <path
-              fillRule="evenodd"
-              d="M10.496 2.132a1 1 0 00-.992 0l-7 4A1 1 0 003 8v7a1 1 0 100 2h14a1 1 0 100-2V8a1 1 0 00.496-1.868l-7-4zM6 9a1 1 0 00-1 1v3a1 1 0 102 0v-3a1 1 0 00-1-1zm3 1a1 1 0 012 0v3a1 1 0 11-2 0v-3zm5-1a1 1 0 00-1 1v3a1 1 0 102 0v-3a1 1 0 00-1-1z"
-              clipRule="evenodd"
-            />
-          </svg>
+          <GiBurningSkull size="32"/>
         }
         text="Discord Todo⚡"
         color={color}
       />
 
-      <hr className="sidebar-hr" />
+      {/*<hr className="sidebar-hr" />*/}
       <SidebarIcon
         icon={
           <svg
@@ -94,7 +84,7 @@ function Navbar({ showInputModal, showModal, color }) {
         text="Customize your view"
         color={color}
       />
-      <hr className="sidebar-hr" />
+      {/*<hr className="sidebar-hr" />*/}
     </nav>
   );
 }

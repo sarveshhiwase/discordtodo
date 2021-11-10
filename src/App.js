@@ -99,7 +99,7 @@ function App() {
         showModal={showModal}
         color={color}
       />
-      <div className="min-h-screen dark:bg-gray-700 bg-[#f0f8ff]">
+      <div className="min-h-screen pl-0 pt-16 sm:pt-0 sm:pl-16 dark:bg-gray-700 bg-[#f0f8ff]">
         {addTask && (
           <InputModal closeModal={closeInputModal} createTask={createTask} />
         )}
@@ -110,7 +110,7 @@ function App() {
             color={color}
           />
         )}
-        <div className="w-3/5 p-4 mx-auto">
+        <div className="w-full sm:w-3/5 p-4 mx-auto">
           {usertasks &&
             usertasks.map((task) => (
               <Task
