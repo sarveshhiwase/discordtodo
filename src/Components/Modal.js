@@ -5,7 +5,7 @@ function Modal({ closeModal, setColor, color }) {
         className="absolute inset-0 backdrop-filter backdrop-blur-sm"
         onClick={closeModal}
       ></div>
-      <div className="absolute border border-[#d0d7de] dark:border-gray-500 inset-x-0 top-36 m-auto p-4 w-3/5 sm:w-2/5 bg-[#f5f5f5] dark:bg-[#1C2128] rounded-md text-gitdark dark:text-white">
+      <div className="absolute border border-[#d0d7de] dark:border-gray-500 inset-x-0 top-36 m-auto p-4 w-4/5 sm:w-3/5 lg:w-2/5 xl:w-2/5 bg-[#f5f5f5] dark:bg-[#1C2128] rounded-md text-gitdark dark:text-white">
         <h1 className="p-2  text-2xl font-bold text-center">
           Customize Your view
         </h1>
